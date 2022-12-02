@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vietdh/ros2_workspace/src/asignment_2_ros
+CMAKE_SOURCE_DIR = /home/mp4d/asignment_2_ros/src/kf_package
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vietdh/ros2_workspace/build/kf_package
+CMAKE_BINARY_DIR = /home/mp4d/asignment_2_ros/build/kf_package
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -103,8 +103,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -137,9 +137,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vietdh/ros2_workspace/build/kf_package/CMakeFiles /home/vietdh/ros2_workspace/build/kf_package/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mp4d/asignment_2_ros/build/kf_package/CMakeFiles /home/mp4d/asignment_2_ros/build/kf_package/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vietdh/ros2_workspace/build/kf_package/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mp4d/asignment_2_ros/build/kf_package/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

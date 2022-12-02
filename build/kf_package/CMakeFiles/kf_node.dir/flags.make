@@ -7,11 +7,11 @@ C_FLAGS =   -Wall -Wextra -Wpedantic
 
 C_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB
 
-C_INCLUDES = -I/home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src -I/home/vietdh/ros2_workspace/src/asignment_2_ros/src/BRAM-uio-driver/src -I/home/vietdh/ros2_workspace/src/asignment_2_ros/include -isystem /opt/ros/foxy/include 
+C_INCLUDES = -I/home/mp4d/asignment_2_ros/src/kf_package/src/KalmanFilterKernel-driver/src -I/home/mp4d/asignment_2_ros/src/kf_package/src/BRAM-uio-driver/src -I/home/mp4d/asignment_2_ros/src/kf_package/include -isystem /opt/ros/foxy/include 
 
 CXX_FLAGS =   -Wall -Wextra -Wpedantic -std=gnu++17
 
 CXX_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB
 
-CXX_INCLUDES = -I/home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src -I/home/vietdh/ros2_workspace/src/asignment_2_ros/src/BRAM-uio-driver/src -I/home/vietdh/ros2_workspace/src/asignment_2_ros/include -isystem /opt/ros/foxy/include 
+CXX_INCLUDES = -I/home/mp4d/asignment_2_ros/src/kf_package/src/KalmanFilterKernel-driver/src -I/home/mp4d/asignment_2_ros/src/kf_package/src/BRAM-uio-driver/src -I/home/mp4d/asignment_2_ros/src/kf_package/include -isystem /opt/ros/foxy/include 
 

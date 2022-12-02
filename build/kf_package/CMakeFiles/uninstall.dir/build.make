@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vietdh/ros2_workspace/src/asignment_2_ros
+CMAKE_SOURCE_DIR = /home/mp4d/asignment_2_ros/src/kf_package
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vietdh/ros2_workspace/build/kf_package
+CMAKE_BINARY_DIR = /home/mp4d/asignment_2_ros/build/kf_package
 
 # Utility rule file for uninstall.
 
@@ -67,6 +67,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/vietdh/ros2_workspace/build/kf_package && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vietdh/ros2_workspace/src/asignment_2_ros /home/vietdh/ros2_workspace/src/asignment_2_ros /home/vietdh/ros2_workspace/build/kf_package /home/vietdh/ros2_workspace/build/kf_package /home/vietdh/ros2_workspace/build/kf_package/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mp4d/asignment_2_ros/build/kf_package && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mp4d/asignment_2_ros/src/kf_package /home/mp4d/asignment_2_ros/src/kf_package /home/mp4d/asignment_2_ros/build/kf_package /home/mp4d/asignment_2_ros/build/kf_package /home/mp4d/asignment_2_ros/build/kf_package/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

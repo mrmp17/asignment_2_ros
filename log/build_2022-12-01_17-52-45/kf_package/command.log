@@ -1,4 +1,0 @@
-Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
-Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
-Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/vietdh/ros2_workspace/build/kf_package
-Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/vietdh/ros2_workspace/build/kf_package

@@ -1,8 +1,0 @@
-[01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src/xkalmanfilterkernel_linux.c:[m[K In function ‘[01m[Kuio_info_read_map_addr[m[K’:
-[01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src/xkalmanfilterkernel_linux.c:68:26:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%x[m[K’ expects argument of type ‘[01m[Kunsigned int *[m[K’, but argument 3 has type ‘[01m[Ku64 *[m[K’ {aka ‘[01m[Klong unsigned int *[m[K’} [[01;35m[K-Wformat=[m[K]
-   68 |     ret = fscanf(fp, "0x[01;35m[K%x[m[K", [32m[K&info->maps[n].addr[m[K);
-      |                         [01;35m[K~^[m[K   [32m[K~~~~~~~~~~~~~~~~~~~[m[K
-      |                          [01;35m[K|[m[K   [32m[K|[m[K
-      |                          [01;35m[K|[m[K   [32m[Ku64 * {aka long unsigned int *}[m[K
-      |                          [01;35m[Kunsigned int *[m[K
-      |                         [32m[K%lx[m[K
