@@ -1,0 +1,4 @@
+[01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:[m[K In constructor ‘[01m[KKFNode::KFNode(const string&, const string&)[m[K’:
+[01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:11:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kresult[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   11 |   int [01;35m[Kresult[m[K = XKalmanfilterkernel_Initialize(&kf_kernel,"KalmanFilterKernel_0");
+      |       [01;35m[K^~~~~~[m[K

@@ -1,0 +1,62 @@
+[0.011s] Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/vietdh/ros2_workspace/src/asignment_2_ros -DCMAKE_INSTALL_PREFIX=/home/vietdh/ros2_workspace/install/kf_package
+[0.020s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.035s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.169s] -- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)
+[0.183s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.186s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.263s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.321s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.346s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.347s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.444s] -- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.486s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.488s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.488s] -- Configured cppcheck include dirs: /home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src;/home/vietdh/ros2_workspace/src/asignment_2_ros/src/BRAM-uio-driver/src;$<BUILD_INTERFACE:/home/vietdh/ros2_workspace/src/asignment_2_ros/include>
+[0.488s] -- Configured cppcheck exclude dirs and/or files: 
+[0.490s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.490s] -- Configured cpplint exclude dirs and/or files: 
+[0.491s] -- Added test 'lint_cmake' to check CMake code style
+[0.494s] -- Added test 'uncrustify' to check C / C++ code style
+[0.494s] -- Configured uncrustify additional arguments: 
+[0.495s] -- Added test 'xmllint' to check XML markup files
+[0.496s] -- Configuring done
+[0.504s] -- Generating done
+[0.504s] -- Build files have been written to: /home/vietdh/ros2_workspace/build/kf_package
+[0.509s] Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/vietdh/ros2_workspace/src/asignment_2_ros -DCMAKE_INSTALL_PREFIX=/home/vietdh/ros2_workspace/install/kf_package
+[0.510s] Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
+[0.538s] [35m[1mScanning dependencies of target kf_node[0m
+[0.563s] [ 80%] [32mBuilding C object CMakeFiles/kf_node.dir/src/KalmanFilterKernel-driver/src/xkalmanfilterkernel_linux.c.o[0m
+[0.563s] [ 80%] [32mBuilding C object CMakeFiles/kf_node.dir/src/KalmanFilterKernel-driver/src/xkalmanfilterkernel.c.o[0m
+[0.563s] [ 80%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/BRAM-uio-driver/src/bram_uio.cpp.o[0m
+[0.563s] [ 80%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_node.cpp.o[0m
+[0.576s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src/xkalmanfilterkernel_linux.c:[m[K In function ‘[01m[Kuio_info_read_map_addr[m[K’:
+[0.576s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/KalmanFilterKernel-driver/src/xkalmanfilterkernel_linux.c:68:26:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%x[m[K’ expects argument of type ‘[01m[Kunsigned int *[m[K’, but argument 3 has type ‘[01m[Ku64 *[m[K’ {aka ‘[01m[Klong unsigned int *[m[K’} [[01;35m[K-Wformat=[m[K]
+[0.576s]    68 |     ret = fscanf(fp, "0x[01;35m[K%x[m[K", [32m[K&info->maps[n].addr[m[K);
+[0.576s]       |                         [01;35m[K~^[m[K   [32m[K~~~~~~~~~~~~~~~~~~~[m[K
+[0.576s]       |                          [01;35m[K|[m[K   [32m[K|[m[K
+[0.576s]       |                          [01;35m[K|[m[K   [32m[Ku64 * {aka long unsigned int *}[m[K
+[0.576s]       |                          [01;35m[Kunsigned int *[m[K
+[0.576s]       |                         [32m[K%lx[m[K
+[4.238s] [100%] [32m[1mLinking CXX executable kf_node[0m
+[4.390s] [100%] Built target kf_node
+[4.402s] Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
+[4.426s] Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/vietdh/ros2_workspace/build/kf_package
+[4.432s] -- Install configuration: ""
+[4.432s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/lib/kf_package/kf_node
+[4.433s] -- Set runtime path of "/home/vietdh/ros2_workspace/install/kf_package/lib/kf_package/kf_node" to ""
+[4.433s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/ament_index/resource_index/package_run_dependencies/kf_package
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/ament_index/resource_index/parent_prefix_path/kf_package
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/ament_prefix_path.sh
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/ament_prefix_path.dsv
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/path.sh
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/path.dsv
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.bash
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.sh
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.zsh
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.dsv
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/package.dsv
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/ament_index/resource_index/packages/kf_package
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/cmake/kf_packageConfig.cmake
+[4.434s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/cmake/kf_packageConfig-version.cmake
+[4.435s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/package.xml
+[4.438s] Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/vietdh/ros2_workspace/build/kf_package

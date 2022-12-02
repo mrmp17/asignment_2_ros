@@ -1,0 +1,8 @@
+source;share/kf_package/hook/cmake_prefix_path.ps1
+source;share/kf_package/hook/cmake_prefix_path.dsv
+source;share/kf_package/hook/cmake_prefix_path.sh
+source;share/kf_package/local_setup.bash
+source;share/kf_package/local_setup.dsv
+source;share/kf_package/local_setup.ps1
+source;share/kf_package/local_setup.sh
+source;share/kf_package/local_setup.zsh

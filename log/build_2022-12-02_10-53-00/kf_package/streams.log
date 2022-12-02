@@ -1,0 +1,30 @@
+[0.011s] Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
+[0.038s] [35m[1mScanning dependencies of target kf_node[0m
+[0.054s] [ 20%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_node.cpp.o[0m
+[1.049s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:[m[K In constructor ‘[01m[KKFNode::KFNode(const string&, const string&)[m[K’:
+[1.049s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:11:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kresult[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[1.049s]    11 |   int [01;35m[Kresult[m[K = XKalmanfilterkernel_Initialize(&kf_kernel,"KalmanFilterKernel_0");
+[1.049s]       |       [01;35m[K^~~~~~[m[K
+[3.719s] [ 40%] [32m[1mLinking CXX executable kf_node[0m
+[3.875s] [100%] Built target kf_node
+[3.894s] Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
+[3.947s] Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/vietdh/ros2_workspace/build/kf_package
+[3.952s] -- Install configuration: ""
+[3.952s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/lib/kf_package/kf_node
+[3.954s] -- Set runtime path of "/home/vietdh/ros2_workspace/install/kf_package/lib/kf_package/kf_node" to ""
+[3.954s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/ament_index/resource_index/package_run_dependencies/kf_package
+[3.954s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/ament_index/resource_index/parent_prefix_path/kf_package
+[3.954s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/ament_prefix_path.sh
+[3.954s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/ament_prefix_path.dsv
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/path.sh
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/environment/path.dsv
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.bash
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.sh
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.zsh
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/local_setup.dsv
+[3.955s] -- Installing: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/package.dsv
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/ament_index/resource_index/packages/kf_package
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/cmake/kf_packageConfig.cmake
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/cmake/kf_packageConfig-version.cmake
+[3.955s] -- Up-to-date: /home/vietdh/ros2_workspace/install/kf_package/share/kf_package/package.xml
+[3.956s] Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/vietdh/ros2_workspace/build/kf_package

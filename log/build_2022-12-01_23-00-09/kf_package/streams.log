@@ -1,0 +1,40 @@
+[0.014s] Invoking command in '/home/vietdh/ros2_workspace/build/kf_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
+[0.045s] [35m[1mScanning dependencies of target kf_node[0m
+[0.064s] [ 20%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_node.cpp.o[0m
+[0.150s] In file included from [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:1[m[K:
+[0.150s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.h:12:[m[K [01;35m[Kwarning: [m[K"__linux__" redefined
+[0.150s]    12 | #define __linux__
+[0.150s]       | 
+[0.150s] [01m[K<built-in>:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+[0.150s] In file included from [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:1[m[K:
+[0.150s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.h:13:[m[K [01;35m[Kwarning: [m[K"__cplusplus" redefined
+[0.150s]    13 | #define __cplusplus
+[0.150s]       | 
+[0.150s] [01m[K<built-in>:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+[1.174s] In file included from [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:1[m[K:
+[1.174s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.h:60:15:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[1.174s]    60 |   BRAM writer([01;31m[K0[m[K, 1024); //check UIO number
+[1.174s]       |               [01;31m[K^[m[K
+[1.174s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.h:60:15:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before numeric constant
+[1.175s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.h:61:15:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[1.175s]    61 |   BRAM reader([01;31m[K1[m[K, 1024);
+[1.175s]       |               [01;31m[K^[m[K
+[1.175s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.h:61:15:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K...[m[K’ before numeric constant
+[1.185s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:[m[K In constructor ‘[01m[KKFNode::KFNode(const string&, const string&)[m[K’:
+[1.185s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:13:7:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kresult[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[1.185s]    13 |   int [01;35m[Kresult[m[K = XKalmanfilterkernel_Initialize(&kf_kernel,"KalmanFilterKernel_0");
+[1.185s]       |       [01;35m[K^~~~~~[m[K
+[1.188s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:[m[K In member function ‘[01m[Kvoid KFNode::pos_meas_callback(std_msgs::msg::Float32MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.188s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:56:38:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K([m[K’ token
+[1.188s]    56 |   if(pos_meas_queue.empty() == 0) && [01;31m[K([m[Kcontrol_input_queue.empty() == 0)
+[1.188s]       |                                      [01;31m[K^[m[K
+[1.188s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:56:38:[m[K [01;35m[Kwarning: [m[Ktaking the address of a label is non-standard [[01;35m[K-Wpedantic[m[K]
+[1.188s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:[m[K In member function ‘[01m[Kvoid KFNode::control_input_callback(std_msgs::msg::Float32MultiArray_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.188s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:89:38:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K([m[K’ token
+[1.188s]    89 |   if(pos_meas_queue.empty() == 0) && [01;31m[K([m[Kcontrol_input_queue.empty() == 0)
+[1.188s]       |                                      [01;31m[K^[m[K
+[1.189s] [01m[K/home/vietdh/ros2_workspace/src/asignment_2_ros/src/kf_node.cpp:89:38:[m[K [01;35m[Kwarning: [m[Ktaking the address of a label is non-standard [[01;35m[K-Wpedantic[m[K]
+[2.435s] make[2]: *** [CMakeFiles/kf_node.dir/build.make:63: CMakeFiles/kf_node.dir/src/kf_node.cpp.o] Error 1
+[2.435s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/kf_node.dir/all] Error 2
+[2.435s] make: *** [Makefile:141: all] Error 2
+[2.437s] Invoked command in '/home/vietdh/ros2_workspace/build/kf_package' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/vietdh/ros2_workspace/build/kf_package -- -j12 -l12
