@@ -85,9 +85,9 @@ void KFNode::pos_meas_callback(const std_msgs::msg::Float32MultiArray::SharedPtr
   	bram0_addr[3] = *(u32 *)(&control_input.ax);
   	bram0_addr[4] = *(u32 *)(&control_input.ay);
   	bram0_addr[5] = *(u32 *)(&control_input.az);
-//RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[0]));
-//RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[1]));
-//RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[2]));
+RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[0]));
+RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[1]));
+RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[2]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[3]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[4]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[5])); 	
