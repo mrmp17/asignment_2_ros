@@ -1,20 +1,17 @@
 #include "kf_node.h"
 
-KFNode::KFNode(const std::string & node_name, const std::string & node_namespace) : rclcpp::Node(node_name, node_namespace), writer(1, 2048), reader(2, 2048) {
+KFNode::KFNode(const std::string & node_name, const std::string & node_namespace) : rclcpp::Node(node_name, node_namespace), writer(1, 300), reader(2, 300) {
 
   // Custom code here to initialize BRAM and xkalmanfilterkernel
   // ...
-  //Test
-  //      timer_ = this->create_wall_timer(500ms, std::bind(&KFNode::timer_callback, this));
-  //End test
   
   int result = XKalmanfilterkernel_Initialize(&kf_kernel,"KalmanFilterKernel");
-RCLCPP_INFO(this->get_logger(), "KF init: '%d'", result);
+  RCLCPP_INFO(this->get_logger(), "KF init: '%d'", result);
 
-float q = 0.05;
-float r = 0.95;
-XKalmanfilterkernel_Set_q(&kf_kernel, *(u32 *)(&q));
-XKalmanfilterkernel_Set_r(&kf_kernel, *(u32 *)(&r));
+  float q = 0.05;
+  float r = 0.95;
+  XKalmanfilterkernel_Set_q(&kf_kernel, *(u32 *)(&q));
+  XKalmanfilterkernel_Set_r(&kf_kernel, *(u32 *)(&r));
   
 
 // Initialize subscribers
@@ -37,15 +34,9 @@ XKalmanfilterkernel_Set_r(&kf_kernel, *(u32 *)(&r));
 KFNode::~KFNode() {
   // Custom code here to close BRAM and xkalmanfilterkernel
   // ...
-//int tmp = XKalmanfilterkernel_Release(&kf_kernel);
+int tmp = XKalmanfilterkernel_Release(&kf_kernel);
 }
 
-//TEST
-    void KFNode::timer_callback()
-    {
-      RCLCPP_INFO(this->get_logger(), "TEST");
-    }
-//END TEST
 
 void KFNode::pos_meas_callback(const std_msgs::msg::Float32MultiArray::SharedPtr msg) {
   pos_t pos_meas;
@@ -56,22 +47,8 @@ void KFNode::pos_meas_callback(const std_msgs::msg::Float32MultiArray::SharedPtr
 
   // Custom code here to possibly call Kalman filter if both queues are not empty
   // ...
-  //TEST
-  //RCLCPP_INFO(this->get_logger(), "Received!!!"); 
-  //END TEST
   if((pos_meas_queue.empty() == 0) && (control_input_queue.empty() == 0))
   {
-
-//RCLCPP_INFO(this->get_logger(), "Q pos: '%d'", pos_meas_queue.empty());
-//RCLCPP_INFO(this->get_logger(), "Q ctr: '%d'", control_input_queue.empty());
-
-	//int getrint = XKalmanfilterkernel_Get_r(&kf_kernel);
-	//float getr = *(float *)(&(getrint));
-	//int getqint = XKalmanfilterkernel_Get_q(&kf_kernel);
-	//float getq = *(float *)(&(getqint));
-	//RCLCPP_INFO(this->get_logger(), "r value: '%f'", getr);
-        //RCLCPP_INFO(this->get_logger(), "q value: '%f'", getq);
-
   	acc_t control_input;
   	uint32_t *bram0_addr = writer.GetPointer();
   	uint32_t *bram1_addr = reader.GetPointer();
@@ -85,32 +62,27 @@ void KFNode::pos_meas_callback(const std_msgs::msg::Float32MultiArray::SharedPtr
   	bram0_addr[3] = *(u32 *)(&control_input.ax);
   	bram0_addr[4] = *(u32 *)(&control_input.ay);
   	bram0_addr[5] = *(u32 *)(&control_input.az);
-RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[0]));
-RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[1]));
-RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[2]));
+//RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[0]));
+//RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[1]));
+//RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[2]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[3]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[4]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[5])); 	
 
-u32 tmp1 = 0;
-XKalmanfilterkernel_Start(&kf_kernel);  	
-while(!tmp1)
-{
-tmp1 = XKalmanfilterkernel_IsDone(&kf_kernel);
-//RCLCPP_INFO(this->get_logger(), "KF done: '%d'", tmp1);
-}
-
-u32 tmp2 = XKalmanfilterkernel_IsDone(&kf_kernel);
-//RCLCPP_INFO(this->get_logger(), "KF done before: '%d'", tmp1);
-//RCLCPP_INFO(this->get_logger(), "KF done after: '%d'", tmp2);
-//usleep(100);
+	u32 tmp1 = 0;
+	XKalmanfilterkernel_Start(&kf_kernel);  	
+	while(!tmp1)
+	{
+		tmp1 = XKalmanfilterkernel_IsDone(&kf_kernel);
+		//RCLCPP_INFO(this->get_logger(), "KF done: '%d'", tmp1);
+	}
   	pos_meas.x = *(float*)(&bram1_addr[0]);
   	pos_meas.y =  *(float*)(&bram1_addr[1]);
   	pos_meas.z =  *(float*)(&bram1_addr[2]);
-RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'",  *(float*)(&bram1_addr[0]));
-RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'",  *(float*)(&bram1_addr[1]));
-RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'",  *(float*)(&bram1_addr[2]));  	
-publish_pos_est(pos_meas);
+	RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'",  pos_meas.x);
+	RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'",  pos_meas.y);
+	RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'",  pos_meas.z);  	
+	publish_pos_est(pos_meas);
   }
 }
 
@@ -126,10 +98,6 @@ void KFNode::control_input_callback(const std_msgs::msg::Float32MultiArray::Shar
 
   if((pos_meas_queue.empty() == 0) && (control_input_queue.empty() == 0))
   {
-
-//RCLCPP_INFO(this->get_logger(), "Q pos: '%d'", pos_meas_queue.empty());
-//RCLCPP_INFO(this->get_logger(), "Q ctr: '%d'", control_input_queue.empty());
-
   	pos_t pos_meas;
   	uint32_t *bram0_addr = writer.GetPointer();
   	uint32_t *bram1_addr = reader.GetPointer();
@@ -153,26 +121,22 @@ void KFNode::control_input_callback(const std_msgs::msg::Float32MultiArray::Shar
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[4]));
 //RCLCPP_INFO(this->get_logger(), "Bram data: '%f'", *(float*) (&bram0_addr[5]));
 
-u32 tmp1 = 0;
-XKalmanfilterkernel_Start(&kf_kernel);
+	u32 tmp1 = 0;
+	XKalmanfilterkernel_Start(&kf_kernel);
 
-while(!tmp1)
-{
-tmp1 = XKalmanfilterkernel_IsDone(&kf_kernel);
-//RCLCPP_INFO(this->get_logger(), "KF done: '%d'", tmp1);
-}
-//RCLCPP_INFO(this->get_logger(), "KF done before: '%d'", tmp1);
-//RCLCPP_INFO(this->get_logger(), "KF done after: '%d'", tmp2);
-//usleep(100);
+	while(!tmp1)
+	{
+	tmp1 = XKalmanfilterkernel_IsDone(&kf_kernel);
+	//RCLCPP_INFO(this->get_logger(), "KF done: '%d'", tmp1);
+	}
   	pos_meas.x = *(float*)(&bram1_addr[0]);
   	pos_meas.y = *(float*)(&bram1_addr[1]);
   	pos_meas.z = *(float*)(&bram1_addr[2]);
-//RCLCPP_INFO(this->get_logger(), "Bram1 data contr: '%f'", pos_meas.x);
-//RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'", pos_meas.y);
-//RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'", pos_meas.z);
+	RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'", pos_meas.x);
+	RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'", pos_meas.y);
+	RCLCPP_INFO(this->get_logger(), "Bram1 data: '%f'", pos_meas.z);
  	publish_pos_est(pos_meas);
   }
-
 }
 
 void KFNode::publish_pos_est(pos_t pos_est) {
@@ -187,18 +151,13 @@ void KFNode::publish_pos_est(pos_t pos_est) {
   pos_est_msg.pose.position.y = pos_est.y;
   pos_est_msg.pose.position.z = pos_est.z;
   pos_est_pub_->publish(pos_est_msg);
-  //TEST
-  //RCLCPP_INFO(this->get_logger(), "DONE!!!");
-  //END TEST
 }
 
 int main(int argc, char ** argv)
 {
-	rclcpp::init(argc, argv);
-    auto node = std::make_shared<KFNode>();
-
-    rclcpp::spin(node);
-
-	rclcpp::shutdown();
+  rclcpp::init(argc, argv);
+  auto node = std::make_shared<KFNode>();
+  rclcpp::spin(node);
+  rclcpp::shutdown();
   return 0;
 }
